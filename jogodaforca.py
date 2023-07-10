@@ -7,27 +7,34 @@ lista=['GARRAFA','PRATELEIRA','PAREDE','CALENDÁRIO','GATO','CACHORRO']
 chances=6
 tentativas=0
 palavra=random.choice(lista)
-letrasescolhidas=[]
+letrasrepetidas=[]
 estadoinicial=["_"]*len(palavra)
 print(palavra)
 print(estadoinicial)
 
 while(tentativas<chances):
-    letra=input('Digite uma letra: ').upper()
-    letrasescolhidas.append(letra)
+    letra=input('\n\nDigite uma letra: ').upper()
+    letrasrepetidas.append(letra)
     
     if letra in palavra:            
         print(f'VOCÊ ACERTOU A LETRA {letra}') 
-        estadoinicial=letra
+        for i in range(len(palavra)):
+            if letra == palavra[i]:
+                estadoinicial[i]=letra
     else:
         print(f'VOCÊ ERROU A LETRA {letra}')
         tentativas+=1
+    
+    print()
+    print(estadoinicial)   
     print(f'Chances = {chances}')
     print(f'Tentativas = {tentativas}')
-    print
-    print(estadoinicial)
-
+    
+    print(f'Letras Repetidas :')
+    for letra1 in letrasrepetidas:
+        print(letra1,end=" ")
+print('\n')
 #print('=',*30)
-print('Fim do programa!!!')
+print('\nFim do programa!!!')
 #print('=',*30)
-parei o video 22 min
+parei no video 31 min
