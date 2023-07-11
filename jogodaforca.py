@@ -9,11 +9,13 @@ tentativas=0
 palavra=random.choice(lista)
 letrasrepetidas=[]
 estadoinicial=["_"]*len(palavra)
-print(palavra)
 print(estadoinicial)
 
-while(tentativas<chances):
+while((tentativas<chances) and ("".join(estadoinicial)!=palavra)):
     letra=input('\n\nDigite uma letra: ').upper()
+    while letra in letrasrepetidas:
+        print('\nVocê já escolheu essa letra.Escolha outra:')
+        letra=input('Digite uma letra: ').upper()
     letrasrepetidas.append(letra)
     
     if letra in palavra:            
@@ -27,14 +29,17 @@ while(tentativas<chances):
     
     print()
     print(estadoinicial)   
-    print(f'Chances = {chances}')
+    print(f'\nChances = {chances}')
     print(f'Tentativas = {tentativas}')
     
-    print(f'Letras Repetidas :')
+    print(f'Letras Repetidas :',end=" ")
     for letra1 in letrasrepetidas:
         print(letra1,end=" ")
-print('\n')
-#print('=',*30)
-print('\nFim do programa!!!')
-#print('=',*30)
-parei no video 31 min
+if tentativas==chances:
+    print('\nVocê perdeu!!!')
+    print('\nVocê acabou o numero de tentativas.')
+    print(f'A palavra escolhida era {palavra}')
+else:
+    print('\nVocê ganhou!!!')
+        
+print('\n\nFIM DO JOGO DA FORCA!!!')
