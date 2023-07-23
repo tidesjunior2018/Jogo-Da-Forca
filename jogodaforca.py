@@ -35,6 +35,37 @@ while((tentativas<chances) and ("".join(estadoinicial)!=palavra)):
     print(f'Letras Repetidas :',end=" ")
     for letra1 in letrasrepetidas:
         print(letra1,end=" ")
+    print()
+    if tentativas==1:
+        print(' --------')
+        print('|        ')
+        print('|        ')
+        print('|        ')
+        print('|       /')
+    if tentativas==2:
+        print(' --------')
+        print('|        ')
+        print('|        ')
+        print('|        ')
+        print('|       / \\')
+    if tentativas==3:
+        print(' --------')
+        print('|        ')
+        print('|     -- ')
+        print('|        ')
+        print('|       / \\')
+    if tentativas==4:
+        print(' --------')
+        print('|        ')
+        print('|      -- --')
+        print('|        ')
+        print('|       / \\')
+    if tentativas==5:
+        print(' --------')
+        print('|        ')
+        print('|      --|--')
+        print('|        |')
+        print('|       / \\')
 if tentativas==chances:
     print('\nVocê perdeu!!!')
     print('\nVocê acabou o numero de tentativas.')
