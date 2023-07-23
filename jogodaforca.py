@@ -3,12 +3,19 @@ import random
 Faça um jogo da forca.
 '''
 
-lista=['GARRAFA','PRATELEIRA','PAREDE','CALENDÁRIO','GATO','CACHORRO']
+lista=['GARRAFA','PRATELEIRA','PAREDE','CALENDÁRIO','GATO','CACHORRO','COMPUTADOR','PORTA','ESTANTE','TELEVISÃO']
 chances=6
 tentativas=0
 palavra=random.choice(lista)
 letrasrepetidas=[]
 estadoinicial=["_"]*len(palavra)
+print('='*67)
+print('|BEM VINDO AO JOGO DA FORCA FEITO POR ARISTIDES DUARTE MARQUES JR.|')
+print('='*67)
+print()
+print('Você tem 6 tentativas para acertar a palavra sorteada')
+print()
+print('A palavra que foi sorteada foi:',end=" ")
 print(estadoinicial)
 
 while((tentativas<chances) and ("".join(estadoinicial)!=palavra)):
@@ -28,6 +35,7 @@ while((tentativas<chances) and ("".join(estadoinicial)!=palavra)):
         tentativas+=1
     
     print()
+    print('A palavra que foi sorteada foi:',end=" ")
     print(estadoinicial)   
     print(f'\nChances = {chances}')
     print(f'Tentativas = {tentativas}')
@@ -63,6 +71,12 @@ while((tentativas<chances) and ("".join(estadoinicial)!=palavra)):
     if tentativas==5:
         print(' --------')
         print('|        ')
+        print('|      --|--')
+        print('|        |')
+        print('|       / \\')
+    if tentativas==6:
+        print(' --------')
+        print('|        0')
         print('|      --|--')
         print('|        |')
         print('|       / \\')
